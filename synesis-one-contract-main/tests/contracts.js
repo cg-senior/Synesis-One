@@ -8,6 +8,7 @@ const idl = JSON.parse(
         .readFileSync('target/idl/contracts.json', 'utf8')
         .toString());
 const programId = new anchor.web3.PublicKey(idl.metadata.address);
+const provider = anchor.getProvider();
 
 describe('contracts', () => {
   it('Is initialized!', async () => {
