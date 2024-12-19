@@ -9,6 +9,7 @@ const idl = JSON.parse(
         .toString());
 const programId = new anchor.web3.PublicKey(idl.metadata.address);
 const provider = anchor.getProvider();
+const program = new anchor.Program(idl, programId, provider);
 
 describe('contracts', () => {
   it('Is initialized!', async () => {
